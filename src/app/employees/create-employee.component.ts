@@ -13,6 +13,7 @@ export class CreateEmployeeComponent implements OnInit {
   phoneNumber: number;
   contactPreference: string;
   isActive: boolean = false;
+  department:string = "1";
   constructor() { }
 
   ngOnInit(): void {
