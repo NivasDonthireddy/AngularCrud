@@ -1,0 +1,62 @@
+<form #EmployeeForm="ngForm" (ngSubmit)="saveEmployee(EmployeeForm)">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">
+                Create Employee
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" name="fullName" id="fullName" class="form-control" [(ngModel)]="fullName" />
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" class="form-control" [(ngModel)]="email" />
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" [(ngModel)]="phoneNumber" />
+            </div>
+            <div class="form-group">
+                <label for="gender">Contact Preference</label>
+                <div class="form-control">
+                    <label class="radio-inline">
+                        <input type="radio" name="contactPreference" value="phone" [(ngModel)]="contactPreference"/>
+                        Phone
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="contactPreference" value="email" [(ngModel)]="contactPreference" />
+                        Email
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <div class="form-control">
+                    <label class="radio-inline">
+                        <input type="radio" name="gender" value="male" [(ngModel)]="gender"/>
+                        Male
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="gender" value="female" [(ngModel)]="gender" />
+                        Female
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-control">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="isActive" [(ngModel)]="isActive" />
+                        IsActive
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</form>
+
+<p>{{EmployeeForm.value | json}}</p>
